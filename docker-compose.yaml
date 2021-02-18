@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  web:
+    build: .
+    command: python main.py
+    volumes:
+      - ./db_image/face_definition.db:/usr/src/face_definition/db_image/face_definition.db
+      - ./images/:/usr/src/face_definition/images/
+    ports:
+      - 8000:8000
